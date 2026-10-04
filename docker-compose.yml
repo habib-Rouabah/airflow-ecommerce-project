@@ -1,6 +1,3 @@
-# docker-compose — stack complète du projet (cf. §11 du cahier des charges).
-# Services : PostgreSQL (métadonnées Airflow), MongoDB (indicateurs),
-# Airflow (init/webserver/scheduler) et Jenkins (CI/CD).
 x-airflow-common: &airflow-common
   build:
     context: .

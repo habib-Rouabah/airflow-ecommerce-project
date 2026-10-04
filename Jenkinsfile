@@ -1,5 +1,3 @@
-// Jenkinsfile — pipeline CI/CD du projet e-commerce (cf. §10 du cahier des charges).
-// Stages : Checkout, Install, Tests, Validate DAG, Deploy DAG, Trigger DAG, Verify MongoDB.
 pipeline {
     agent any
 
@@ -59,7 +57,6 @@ pipeline {
 
         stage('Deploy DAG') {
             steps {
-                // Déploiement vers le dossier DAGs d'Airflow (volume partagé).
                 sh '''
                     mkdir -p "$AIRFLOW_DAGS_DIR"
                     cp dags/*.py "$AIRFLOW_DAGS_DIR"/
