@@ -1,26 +1,17 @@
-# Python
 __pycache__/
 *.py[cod]
 .venv/
 .venv_tmp/
 venv/
 *.egg-info/
-
-# Airflow
 logs/
 airflow.db
 airflow.cfg
 webserver_config.py
-
-# Données générées / rapports
 data/errors.csv
 data/report.json
-
-# Tests
 .pytest_cache/
 test-results.xml
-
-# OS / IDE
 .DS_Store
 .idea/
 .vscode/
