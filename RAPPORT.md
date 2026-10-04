@@ -249,25 +249,32 @@ L'évolution des ventes est répartie sur **10 mois** (janvier à octobre 2026).
 
 ## 9. Captures d'écran
 
-> À compléter avec les captures de votre environnement.
+### 9.1 Airflow — DAG en succès
 
-### 9.1 Jenkins — pipeline vert
+Exécution `demo_run_1` du DAG `ecommerce_sales_pipeline` : toutes les tâches en
+succès (la tâche `arreter_pipeline` est `skipped`, branche non empruntée).
 
-_[Insérer la capture du pipeline Jenkins (vue Stage View, 7 stages au vert)]_
+![DAG Airflow en succès](captures/airflow_dag.png)
 
-### 9.2 Airflow — DAG en succès
+### 9.2 MongoDB — document inséré
 
-_[Insérer la capture de la Graph View / Grid View du DAG `ecommerce_sales_pipeline`]_
+Document stocké dans la collection `ecommerce_analytics.sales_metrics`
+(indicateurs globaux et top produits).
 
-### 9.3 MongoDB — document inséré
+![Document MongoDB — métriques globales](captures/mongodb_1.png)
 
-_[Insérer la capture de la collection `ecommerce_analytics.sales_metrics` (ex. Compass ou `mongosh`)]_
+Détail des agrégations par catégorie, par région, évolution mensuelle et qualité.
+
+![Document MongoDB — agrégations et qualité](captures/mongodb_2.png)
+
+### 9.3 Jenkins — pipeline vert
+
+Pipeline `ecommerce` exécuté avec succès (build #2).
+
+![Pipeline Jenkins en succès](captures/jenkins_pipeline.png)
 
 ## 10. Difficultés rencontrées
 
-- **Gestion multi-comptes Git** : séparation des identités professionnelle et
-  personnelle via une configuration locale au dépôt et une authentification
-  dédiée (GitHub CLI) pour le push.
 - **Branchement conditionnel Airflow** : combinaison du `BranchPythonOperator`
   avec les Trigger Rules pour que le rapport final s'exécute même lorsqu'une
   branche est ignorée (`skipped`).
