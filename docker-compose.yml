@@ -54,6 +54,8 @@ services:
           --username admin --password admin \
           --firstname Admin --lastname User \
           --role Admin --email admin@example.com || true
+        airflow connections add fs_default \
+          --conn-type fs --conn-extra '{"path": "/"}' || true
     restart: on-failure
 
   airflow-webserver:
